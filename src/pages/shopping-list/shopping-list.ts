@@ -24,7 +24,10 @@ export class ShoppingListPage {
         {
           text: 'Edit',
           handler: () => {
-            console.log('You clicked on Edit button');
+            // console.log('You clicked on Edit button');
+            this.navCtrl.push('EditShoppingItemPage', {
+              'shoppingItemId': shoppingItem.$key
+            });
           }
         },
         {
@@ -32,7 +35,6 @@ export class ShoppingListPage {
           role: 'destructive',
           handler: () => {
             this.shoppingListRef$.remove(shoppingItem.$key);
-            // console.log('Destructive clicked');
           }
         },
         {
